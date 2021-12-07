@@ -5,11 +5,11 @@ def getLanternCount(lanternTimer, days):
 	for i in lanternTimer:
 		lanternCount[i] += 1
 	for i in range(days):
-		newLanternCount = list(map(lambda x: x, lanternCount[1:])) + [0]
-		newLanternCount[6] += lanternCount[0]
-		newLanternCount[8] += lanternCount[0]
-		lanternCount = list(map(lambda x: x, newLanternCount))
-	return sum(lanternCount)
+		lanternCount[9] = lanternCount[0]
+		for i in range(9):
+			lanternCount[i] = lanternCount[i+1]
+		lanternCount[6] += lanternCount[9]
+	return sum(lanternCount[:9])
 
 def getLinesFromInput(removeTrailingNewLines = True):
 	inputFile = open('../input.txt', 'r') 
