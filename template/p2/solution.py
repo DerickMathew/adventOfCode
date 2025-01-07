@@ -1,6 +1,6 @@
 def doSomething():
-  sum = 0
-  return sum
+  count = 0
+  return count
 
 def solution(reportLines):
   x = [line for line in reportLines]
